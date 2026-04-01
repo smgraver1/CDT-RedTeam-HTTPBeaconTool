@@ -3,8 +3,7 @@
 # Event 3
 # 1/3/2026
 
-**Category:** Beacon or Callback Tool  
-**Author:** Stephen Graver  
+**Category:** Beacon or Callback Tool   
 **Target Environment:** Python 3
 
 ## 1. Overview
